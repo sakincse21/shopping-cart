@@ -74,6 +74,7 @@
             return value;
         }
         //first item calculation
+        //minus button
         document.getElementById('qcm1').addEventListener('click', function () {
             const tempamount1 = document.getElementById('iq1').value;
             const tempamount2 = document.getElementById('iq2').value;
@@ -96,7 +97,7 @@
             }
 
         })
-        //first item calculation
+        // plus button
         document.getElementById('qcp1').addEventListener('click', function () {
             const tempamount1 = document.getElementById('iq1').value;
             const tempamount2 = document.getElementById('iq2').value;
@@ -118,6 +119,56 @@
             }
 
         })
+
+        //second item calculation
+        //minus button
+        document.getElementById('qcm2').addEventListener('click', function () {
+            const tempamount1 = document.getElementById('iq1').value;
+            const tempamount2 = document.getElementById('iq2').value;
+            const tempsubtotal = (tempamount1*1099)+(tempamount2*49);
+            document.getElementById('subtotal-money').innerText=tempsubtotal;
+            document.getElementById('total-money').innerText=tempsubtotal;
+            let item2amount = parseFloat(tempamount2);
+
+            item2amount--;
+            if (item2amount < 0) {
+                item2amount = 0;
+                alert('item cannot be less than 0');
+            } else {
+                document.getElementById('iq2').value = item2amount;
+                const item2price = item2amount * 49;
+                const currentsubtotal = currentSubtotalGettr()-49;
+                const currenttotal = currentTotalGettr()-49;
+                document.getElementById('subtotal-money').innerText=currentsubtotal;
+                document.getElementById('total-money').innerText=currenttotal;
+            }
+
+        })
+        // plus button
+        document.getElementById('qcp2').addEventListener('click', function () {
+            const tempamount1 = document.getElementById('iq1').value;
+            const tempamount2 = document.getElementById('iq2').value;
+            const tempsubtotal = (tempamount1*1099)+(tempamount2*49);
+            document.getElementById('subtotal-money').innerText=tempsubtotal;
+            document.getElementById('total-money').innerText=tempsubtotal;
+            let item2amount = parseFloat(tempamount2);
+            item2amount++;
+            if (item2amount > 100) {
+                item2amount = 100;
+                alert('item cannot be more than 100');
+            } else {
+                document.getElementById('iq2').value = item2amount;
+                const item2price = item2amount * 49;
+                const currentsubtotal = currentSubtotalGettr()+49;
+                const currenttotal = currentTotalGettr()+49;
+                document.getElementById('subtotal-money').innerText=currentsubtotal;
+                document.getElementById('total-money').innerText=currenttotal;
+            }
+
+        })
+
+        //cross button setup
+        document.get
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
