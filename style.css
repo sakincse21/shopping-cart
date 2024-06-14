@@ -1,0 +1,32 @@
+.main-area{
+    margin: 120px;
+}
+.submain-area{
+    background-color: rgb(245, 243, 243);
+    padding: 75px 100px;
+}
+.cart-item img{
+    width: 115px;
+}
+.cart-item{
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.calculation-area{
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+}
+.item-quantity{
+    width: 50px;
+    text-align: center;
+}
+.quantity-control{
+    background-color: white;
+    border: none;
+    width: 40px;
+    text-align: center;
+    font-size: 24px;
+}
